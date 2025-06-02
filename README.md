@@ -19,6 +19,10 @@
 ```shell
 python -m venv venv
 ```
+下載必要套件
+```shell
+pip install -r requirements.txt
+```
 啟動fastAPI，先到project/service，執行
 ```shell
 uvicorn api:app --reload

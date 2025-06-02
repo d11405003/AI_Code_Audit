@@ -1,0 +1,14 @@
+gradio
+langgraph
+langchain-openai
+langchain
+langchain-community
+
+python-dotenv
+charset-normalizer
+
+PyPDF2
+python-docx
+textract
+
+beautifulsoup4

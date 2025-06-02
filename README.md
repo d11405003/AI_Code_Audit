@@ -14,13 +14,34 @@
 
 ---
 
-## 專案結構
-project/
-│
-├── main.py # Gradio 主介面
-├── requirements.txt # 套件需求
-├── service/
-│ ├── sonarqube_report.py # SonarQube 掃描與錯誤擷取邏輯
-│ ├── test0531.py # SonarCloud 來源碼擷取模組
-│ └── code_fix.py # GPT 程式碼修復模組
+## 使用流程
+使用python虛擬環境執行
+```shell
+python -m venv venv
+```
+啟動fastAPI，先到project/service，執行
+```shell
+uvicorn api:app --reload
+```
+執行主程式(gradio)
+```shell
+python main.py
+```
 
+--- 
+
+## 使用方式
+1. 選擇 SonarQube 專案與檔案
+2. 上傳規章文件
+3. 顯示該檔案的錯誤資訊與原始碼
+4. 點擊分析按鈕，自動產生 GPT 解釋與修正建議
+5. 檢視修改後版本，綠色區塊為 GPT 建議修正內容
+
+---
+
+## 使用技術
+- Python
+- Gradio - 使用者互動介面
+- LangChain + GPT-4o - 自然語言處理模型
+- SonarQube / SonarCloud API - 程式碼靜態分析
+- FastAPI - 提供 checklist 抽取 API
